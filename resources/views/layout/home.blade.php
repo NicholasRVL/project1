@@ -1,20 +1,43 @@
-@extends('main.main')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ $title }}</title>
 
-@section('intro')
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="login.css">
 
-<div class="bg-dark bg-intro">
+</head>
+<body class="bg-dark bg-intro">
 
+   @if(!isset($hideLogo))
     <div class="logo-intro">
-        <span>🐻‍❄️</span>
 
-        <div class="log-reg">
-            <button class="btn btn-dark" onclick="login()">Login</button>
-            <button class="btn btn-light" onclick="Register()">Register</button>
-    
+        <div>
+            <span >🐻‍❄️</span>
         </div>
 
-    </div>
+        <div class="log-reg">
+            <a href="/login" id="login-btn" class="btn btn-dark {{ ($active === "login") ? 'active' : '' }}">Login</a>
+            <a href="/register" class="btn btn-secondary">Register</a>
+        </div>
 
-</div>
+        
+    </div>
+     @endif
+
+    @yield('content')
     
-@endsection
+
+    <script>
+        document.getElementById("login-btn")?.addEventListener("click", function() {
+    document.querySelector(".logo-intro").style.display = "none";
+});
+    </script>
+    
+
+</body>
+</html>

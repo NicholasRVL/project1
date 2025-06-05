@@ -6,6 +6,7 @@ function addTask() {
 
     const list = document.getElementById("taskList");
     const li = document.createElement("li");
+    const textList = document.getElementById("text-list")
 
     li.className = "task-item";
     li.innerHTML = `
@@ -16,7 +17,9 @@ function addTask() {
       <button class="btn btn-sm btn-danger" onclick="removeTask(this)">🗑️</button>
     `;
 
+
     list.appendChild(li);
+    textList.appendChild(list);
     input.value = "";
   }
 

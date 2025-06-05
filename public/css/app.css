@@ -1,0 +1,34 @@
+  .gender-option {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  /* Default icon color */
+  .gender-icon {
+    font-size: 2.5rem;
+    color: #aaa;
+  }
+
+  /* Selected styles */
+  input#male:checked + label .gender-icon {
+    color: #2196f3; /* biru */
+    text-shadow: 0 0 15px #2196f3;
+    transform: scale(1.2);
+  }
+
+  input#female:checked + label .gender-icon {
+    color: #e91e63; /* pink */
+    text-shadow: 0 0 15px #e91e63;
+    transform: scale(1.2);
+  }
+
+  .label-text {
+    margin-top: 8px;
+    font-weight: 500;
+  }
