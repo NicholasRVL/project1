@@ -6,11 +6,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.index');
 });
 
 Route::get('/main', function () {
@@ -35,11 +34,19 @@ Route::resource('user', UserController::class);
 Route::resource('admin', AdminController::class);
 
 
-Route::get('/user', [UserController::class, 'index'])->name('tasks.index');
-Route::resource('tasks', UserController::class);
-Route::resource('tasks', UserController::class)->except(['index']);
-Route::patch('/tasks/{task}/toggle', [UserController::class, 'toggle'])->name('tasks.toggle');
-Route::post('tasks/{task}/toggle', [UserController::class, 'toggle'])->name('tasks.toggle');
+
+
+
+ Route::prefix('tasks')->group(function () {
+        Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
+        Route::get('/create', [TaskController::class, 'create'])->name('tasks.create');
+        Route::post('/', [TaskController::class, 'store'])->name('tasks.store');
+        Route::get('/{task}', [TaskController::class, 'show'])->name('tasks.show');
+        Route::get('/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+        Route::put('/{task}', [TaskController::class, 'update'])->name('tasks.update');
+        Route::delete('/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+        Route::post('/{task}/toggle', [TaskController::class, 'toggle'])->name('tasks.toggle');
+});
 
 
 Route::get('/dashboard/admin', [AdminController::class, 'index'])->name('admin.index');

@@ -225,14 +225,15 @@ crossorigin="anonymous"
                 </li>
             </ul>
 
-            <ul class="navbar-nav position-absolute bottom-0 mb-2">
-                <li class="nav-item">
-                  <a href="/home" class="nav-link text-white text-center fw-bold py-3 bg-dark" style="border-radius: 10px">
-                     <i class="bi bi-box-arrow-in-left">Logout</i> 
-                  </a>
-                  
-                </li>
-            </ul>
+            <div class="m-2" style="position: absolute; bottom: 0; left: 70px;"  >
+              <form action="{{ url('logout') }}" method="POST" >
+
+                @csrf
+
+              <button type="submit" class="btn btn-secondary rounded">Logout</button>
+
+                </form>
+          </div>
 
         </nav>
     </div>

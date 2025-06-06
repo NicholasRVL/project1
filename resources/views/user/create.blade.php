@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Tambah Task Baru 📝</h1>
-    <form method="POST" action="{{ route('tasks.store') }}">
+    <form method="POST" action="{{ route('tasks.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label class="form-label">Judul Task</label>
