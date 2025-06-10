@@ -16,14 +16,12 @@ class AuthController extends Controller
         //jik user sudah login
         if($user){
             //cek level
-            if($user->level == 'admin'){
+            if($user->level == 'developer'){
+                return redirect()->intended('developer');
+            }else if($user->level == 'admin'){
                 return redirect()->intended('admin');
             }else if($user->level == 'user'){
-                return redirect()->intended('user');
-            }else if($user->level == 'dosen'){
-                return redirect()->intended('dosen');
-            }else if($user->level == 'mahasiswa'){
-                return redirect()->intended('mahasiswa');
+                return redirect()->intended('/');
             }
         }
 
@@ -43,14 +41,12 @@ class AuthController extends Controller
             //jika berhasil login
             //cek level user
             $user = Auth::user();
-            if($user->level == 'admin'){
+            if($user->level == 'developer'){
+                return redirect()->intended('developer');
+            }else if($user->level == 'admin'){
                 return redirect()->intended('admin');
             }else if($user->level == 'user'){
-                return redirect()->intended('user');
-            }else if($user->level == 'dosen'){
-                return redirect()->intended('dosen');
-            }else if($user->level == 'mahasiswa'){
-                return redirect()->intended('mahasiswa');
+                return redirect()->intended('/');
             }
             return redirect()->intended('/');
         }
@@ -89,6 +85,7 @@ class AuthController extends Controller
         $user->level = 'user';
         $user->save();
 
+        return redirect('login');
     }
 
     function logout(){

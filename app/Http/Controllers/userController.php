@@ -30,18 +30,6 @@ class UserController extends Controller
         ]);
         return redirect()->route('tasks.index')->with('success', 'Task created!');
     }
-
-
-    
-
-    public function show(Task $task) {
-        return view('user.show', compact('task'));
-    }
-    
-    public function edit(Task $task) {
-
-        return view('user.edit', compact('task'));
-    }
     
 
 

@@ -26,4 +26,22 @@ class CekLogin
 
         return redirect('login')->withErrors(['failed' => 'Anda tidak memiliki akses!']);
     }
+
+    // public function handle(Request $request, Closure $next, string $roles): Response
+    // {
+
+    //     $user = auth()->user();
+
+    //     $akses = [
+    //     'developer' => ['developer', 'admin', 'user'],
+    //     'admin'     => ['admin', 'user'],
+    //     'user'      => ['user'],
+    // ];
+    //     //cek apakah user sudah login
+    //    if ($user && in_array($user->level, $akses[$roles])) {
+    //         return $next($request);
+    //     }
+
+    //     return redirect('login')->withErrors(['failed' => 'Anda tidak memiliki akses!']);
+    // }
 }

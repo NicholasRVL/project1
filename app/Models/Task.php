@@ -12,9 +12,12 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'user_id']; // Tambahkan 'user_id' ke fillable
+    protected $fillable = ['title', 'notes', 'user_id', 'is_done'];
 
-    // Relasi ke User
+    protected $attributes = [
+        'is_done' => false,
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

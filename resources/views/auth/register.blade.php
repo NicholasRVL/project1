@@ -91,31 +91,6 @@
           <div class="d-flex justify-content-center gap-5 mb-4">
 
 
-            <div class="text-center">
-                <input type="radio" name="level" id="user" value="user">
-                  <label for="male" class="gender-option d-flex flex-column align-items-center">
-                    <i class="bi bi-person-fill"></i>
-                      <div class="label-text" style="color:rgb(219, 219, 196);">User</div>
-                  </label>
-            </div>
-
-
-            <div class="text-center">
-                  <input type="radio" name="level" id="mahasiswa" value="mhs">
-                     <label for="female" class="gender-option d-flex flex-column align-items-center">
-                        <i class="bi bi-mortarboard-fill"></i>
-                            <div class="label-text" style="color:rgb(219, 219, 196);">Mahasiswa</div>
-                       </label>
-             </div>
-
-             <div class="text-center">
-                  <input type="radio" name="level" id="dosen" value="dosen">
-                     <label for="female" class="gender-option d-flex flex-column align-items-center">
-                        <i class="bi bi-person-video3"></i>
-                            <div class="label-text" style="color:rgb(219, 219, 196);">Dosen</div>
-                       </label>
-             </div>
-
         </div>
 
         @error('level')

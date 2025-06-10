@@ -58,33 +58,29 @@ crossorigin="anonymous"
 
 
 <!--begin::Header-->
-<nav class="main-header navbar navbar-expand navbar-dark bg-dark">
+<nav class="main-header navbar navbar-expand shadow-lg " style="height: 6vh; background-color: rgb(255, 255, 255);" >
     <!-- Left navbar links -->
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-          <i class="fas fa-bars"></i>
+      <li class="nav-item navHover">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.5em;">
+          <i class="fas fa-bars" ></i>
         </a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/dashboard" class="nav-link">Home</a>
+      <li class="nav-item d-none d-sm-inline-block navHover">
+        <a href="/dashboard" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+      <li class="nav-item d-none d-sm-inline-block navHover">
+        <a href="#" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Contact</a>
       </li>
     </ul>
   
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-      </li>
   
       <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
+
+      {{-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
@@ -108,10 +104,10 @@ crossorigin="anonymous"
           <!-- More chat items... -->
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
-      </li>
+      </li> --}}
   
       <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
+      {{-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
@@ -127,43 +123,43 @@ crossorigin="anonymous"
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
-      </li>
+      </li> --}}
   
-      <!-- Fullscreen -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
+      
   
       <!-- User Menu -->
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <img src="img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">
-          <span class="d-none d-md-inline">Nicholas Raphael</span>
+          <span class="d-none d-md-inline" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.2em;">{{Auth::user()->name}}</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <li class="user-header bg-dark">
-            <img src="img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             <p>
-              Nicholas Raphael - Web Developer
-              <small>Member since Nov. 2023</small>
+              {{ Auth::user()->name }}
+              <small>Member Since {{ Auth::user()->created_at }}</small>
             </p>
           </li>
           <li class="user-footer">
-            <a href="#" class="btn btn-default btn-flat">Profile</a>
-            <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+            <button type="submit" class="btn btn-secondary rounded">Logout</button>
           </li>
         </ul>
       </li>
+
+      <!-- Fullscreen -->
+      <li class="nav-item navHover" >
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.2em;">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+
     </ul>
   </nav>
   <!--end::Header-->
 
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed height: 6vh; background-color: rgb(255, 255, 255);">
   
     <a href="#" class="brand-link">
-        <span class="brand-text font-weight-light">  </span>
+        <span class="brand-text font-weight" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;">We Tasks</span>
     </a>
 
   
@@ -175,62 +171,43 @@ crossorigin="anonymous"
                 
 
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                <li class="nav-item navHover">
+                    <a href="/" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;">
                         <i class="bi bi-briefcase-fill"></i>
                       <p>
-                        {{-- {{ $fakultas }} --}}
-                        <i class="right fas fa-angle-left"></i> 
+                        Home
                       </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="/prodi1" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          {{-- <p>{{ $fkk }}</p> --}}
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="/prodi2" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          {{-- <p>{{ $fkbe }}</p> --}}
-                        </a>
-                      </li>
-                    </ul>
                   </li>
 
-                
-                
-                <li class="nav-item">
-                    <a href="/dosen" class="nav-link">
-                        <i class="bi bi-person-square"></i>
-                        {{-- <p>{{ $dosen }}</p> --}}
-                    </a>
-                </li>
-                
-                
-                <li class="nav-item">
-                    <a href="/mhs" class="nav-link">
+                <li class="nav-item navHover">
+                    <a href="/tasks" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;">
                         <i class="bi bi-person-vcard-fill"></i>
-                        {{-- <p>{{ $mahasiswa }}</p> --}}
+                        
+                        <p>
+                          Tasks
+                        </p>
                     </a>
                 </li>
                 
                 
-                <li class="nav-item">
-                    <a href="/materi" class="nav-link">
+                <li class="nav-item navHover">
+                    <a href="/materi" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;"> 
                         <i class="bi bi-book"></i>
-                        {{-- <p>{{ $materi }}</p> --}}
+                        
+                        <p>
+                          Contact
+                        </p>
                     </a>
                 </li>
             </ul>
 
-            <div class="m-2" style="position: absolute; bottom: 0; left: 70px;"  >
+            <div class="m-2 navHover" style="position: absolute; bottom: 0; left: 70px;"  >
               <form action="{{ url('logout') }}" method="POST" >
 
                 @csrf
 
-              <button type="submit" class="btn btn-secondary rounded">Logout</button>
+              <button type="submit" class="btn rounded" style="color: rgb(255, 255, 255); font-weight: 600; font-family: monospace; font-size: 1.5em; background-color: rgb(77, 105, 129);">Logout</button>
 
                 </form>
           </div>
