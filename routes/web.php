@@ -7,7 +7,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DevAdmController;
+use App\Http\Controllers\DevUserController;
 use App\Http\Controllers\TasksDevController;
+use App\Http\Controllers\TaskUserController;
 use App\Http\Controllers\DeveloperController;
 
 
@@ -34,9 +37,6 @@ Route::get('/master', function() {
 Route::resource('user', UserController::class);
 Route::resource('admin', AdminController::class);
 
-
-
-
  Route::prefix('tasks')->group(function () {
     Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
     Route::get('/create', [TaskController::class, 'create'])->name('tasks.create');
@@ -47,6 +47,18 @@ Route::resource('admin', AdminController::class);
     Route::delete('/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
     Route::post('/{task}/toggle', [TaskController::class, 'toggle'])->name('tasks.toggle');
 });
+
+
+
+ Route::prefix('developer')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('user.index');
+    Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+    Route::get('/dev/tasks/user/{id}', [TaskUserController::class, 'showTasksUser'])->name('tasks.user');
+    Route::post('/dev/promote/{id}', [DevAdmController::class, 'promote'])->name('user.promote');
+
+});
+
+
 
 
 Route::get('/dashboard/admin', [AdminController::class, 'index'])->name('admin.index');
@@ -69,14 +81,17 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/tasksUser', [TaskController::class, 'index'])->name('user.index')->middleware('auth');
+// Route::get('/tasksUser', [TaskController::class, 'index'])->name('user.index')->middleware('auth');
 
 
 Route::middleware(['auth'])->group(function () {
 
     Route::middleware([CekLogin::class . ':developer'])->group(function () {
         Route::get('/developer', [DeveloperController::class, 'index']);
+        Route::get('/admlist', [DevAdmController::class, 'index']);
+        Route::get('/userlist', [DevUserController::class, 'index']);
         Route::get('/admin', [AdminController::class, 'index']);
+        Route::get('/taskuser', [TaskUserController::class, 'index']);
         Route::get('/', [UserController::class, 'index']);
     });
 

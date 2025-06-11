@@ -49,7 +49,6 @@ crossorigin="anonymous"
 />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
   
@@ -67,7 +66,7 @@ crossorigin="anonymous"
         </a>
       </li>
       <li class="nav-item d-none d-sm-inline-block navHover">
-        <a href="/dashboard" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Home</a>
+        <a href="/" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block navHover">
         <a href="#" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Contact</a>
@@ -156,7 +155,7 @@ crossorigin="anonymous"
   </nav>
   <!--end::Header-->
 
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed height: 6vh; background-color: rgb(255, 255, 255);">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed; height: 6vh; background-color: rgb(255, 255, 255);">
   
     <a href="#" class="brand-link">
         <span class="brand-text font-weight" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;">We Tasks</span>
@@ -173,7 +172,7 @@ crossorigin="anonymous"
 
                 <li class="nav-item navHover">
                     <a href="/" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;">
-                        <i class="bi bi-briefcase-fill"></i>
+                        <i class="bi bi-house-fill"></i>
                       <p>
                         Home
                       </p>

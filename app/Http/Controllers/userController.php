@@ -2,10 +2,11 @@
 
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -13,9 +14,10 @@ class UserController extends Controller
 
     public function index() {
         $tasks = Auth::user()->tasks()->latest()->get();
-        return view('user.index', compact('tasks'));
         $user = Auth::user();
         $task = $user->tasks();
+        return view('user.userHome', compact('tasks'));
+        
     }
     
     public function create() {
@@ -30,6 +32,14 @@ class UserController extends Controller
         ]);
         return redirect()->route('tasks.index')->with('success', 'Task created!');
     }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+    
+        return redirect()->route('user.index')->with('success', 'users deleted successfully');
+    }
+
     
 
 

@@ -28,15 +28,15 @@
         
 
             <div class="mb-3">
-                <label class="form-label" style="opacity: 60%;">Judul</label>
-                <input type="text" name="title" class="form-control mb-3 w-100"  placeholder="Tulis task baru..." required>
+                <label class="form-label" style="opacity: 60%;">Title</label>
+                <input type="text" name="title" class="form-control mb-3 w-100"  placeholder="Title..." required>
                  
-                <label class="form-label" style="opacity: 60%;">Catatan</label>
-                <textarea name="notes" class="form-control w-100"  rows="5" required></textarea>
+                <label class="form-label" style="opacity: 60%;">Note</label>
+                <textarea name="notes" class="form-control w-100" placeholder="Write New..." rows="5" required></textarea>
             </div>
             
-            <a href="#" class="btn " style="background-color: rgb(235, 135, 135);" id="closeForm">Batal</a>
-            <button class="btn " style="background-color: rgb(102, 138, 170);">Tambah</button>
+            <a href="#" class="btn " style="background-color: rgb(235, 135, 135);" id="closeForm">Cancel</a>
+            <button class="btn " style="background-color: rgb(102, 138, 170);">Add</button>
 
     </form>
 
@@ -62,7 +62,7 @@
 
                     <div style="position: absolute; top: 10px; right: 10px;" class="d-flex gap-1">
                         <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-sm btn-warning shadow-sm editBtn" style="display: none;"><i class="bi bi-pencil-square"></i></a>
-                        {{-- <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a> --}}
+                       
                     </div>
 
 
@@ -89,7 +89,7 @@
                 </div>
             </li>
         @empty
-            <li class="list-group-item text-muted">Belum ada catatan</li>
+            <li class="list-group-item text-muted">Empty</li>
         @endforelse
 
     </ul>
