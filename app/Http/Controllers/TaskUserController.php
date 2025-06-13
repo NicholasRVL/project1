@@ -11,10 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class TaskUserController extends Controller
 {
     public function index(){
+
+        $title = 'Tasks Users';
         $tasks = Task::all();
         $taskUdahDone = Task::where('is_done', true)->get();
         $taskBelumDone = Task::where('is_done', false)->get();
-        return view('developer.taskuser', ['tasks' => $tasks], compact( 'taskUdahDone', 'taskBelumDone'));
+        return view('developer.taskuser', ['tasks' => $tasks], compact( 'taskUdahDone', 'taskBelumDone', 'title'));
     }
 
     public function showTasksUser($id) {

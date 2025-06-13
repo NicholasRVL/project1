@@ -1,8 +1,12 @@
 @extends('layout.master')
 
+@section('title', 'List User')
+
 @section('content')
 
-<div class="shadow-sm py-2 mb-3 rounded-2 p-2" style="margin: 0; width: 100%; background-color: rgb(224, 231, 236); display: flex; justify-content: space-between;">
+<div class="shadow-sm py-2 mb-3 rounded-2 p-2" style="margin: 0; width: 100%; background-color: rgb(224, 231, 236); display: flex; ">
+
+        <a href="{{ url()->previous() }}" ><i class="bi bi-arrow-bar-left navHover" style="font-size: 3em; color: rgb(120, 154, 187);"></i></a>
 
         <h1 class="m-3" style="color: rgb(120, 154, 187); font-family: Raleway;">User</h1>
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+<title>@yield('title')</title>
 
 
   <link rel="stylesheet" href="user.css">
@@ -52,6 +52,7 @@ crossorigin="anonymous"
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
   
+<link rel="stylesheet" href="intro.css">
 
 </head>
 
@@ -69,7 +70,7 @@ crossorigin="anonymous"
         <a href="/" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block navHover">
-        <a href="#" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Contact</a>
+        <a href="/contact" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.4em;">Contact</a>
       </li>
     </ul>
   
@@ -131,17 +132,6 @@ crossorigin="anonymous"
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
           <span class="d-none d-md-inline" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.2em;">{{Auth::user()->name}}</span>
         </a>
-        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <li class="user-header bg-dark">
-            <p>
-              {{ Auth::user()->name }}
-              <small>Member Since {{ Auth::user()->created_at }}</small>
-            </p>
-          </li>
-          <li class="user-footer">
-            <button type="submit" class="btn btn-secondary rounded">Logout</button>
-          </li>
-        </ul>
       </li>
 
       <!-- Fullscreen -->
@@ -191,7 +181,7 @@ crossorigin="anonymous"
                 
                 
                 <li class="nav-item navHover">
-                    <a href="/materi" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;"> 
+                    <a href="/contact" class="nav-link" style="color: rgb(71, 102, 129); font-weight: 800; font-family: monospace; font-size: 1.6em;"> 
                         <i class="bi bi-book"></i>
                         
                         <p>

@@ -1,8 +1,10 @@
 @extends('layout.master')
 
+@section('title', 'Developer')
+
 @section('content')
 
-<div class="shadow-sm py-2 mb-3 rounded-2 p-2" style="margin: 0; width: 100%; background-color: rgb(224, 231, 236); display: flex; justify-content: space-between;">
+<div class="shadow-sm py-2 mb-3 rounded-2 p-2" style="margin: 0; width: 100%; background-color: rgb(224, 231, 236); display: flex; ">
 
         <h1 class="m-3" style="color: rgb(120, 154, 187); font-family: Raleway;">Dev Home</h1>
 

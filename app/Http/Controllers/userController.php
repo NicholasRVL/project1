@@ -13,10 +13,11 @@ class UserController extends Controller
 {
 
     public function index() {
+        $title = 'user';
         $tasks = Auth::user()->tasks()->latest()->get();
         $user = Auth::user();
         $task = $user->tasks();
-        return view('user.userHome', compact('tasks'));
+        return view('user.userHome', compact('tasks', 'title'));
         
     }
     

@@ -10,8 +10,9 @@ class DevAdmController extends Controller
     
     public function index(){
 
+        $title = 'List Admin';
         $users = User::where('level', 'admin')->get();
-        return view('developer.admlist', compact('users'));
+        return view('developer.admlist', compact('users', 'title'));
     }
 
     public function promote(Request $request, $id){

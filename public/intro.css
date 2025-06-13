@@ -1,0 +1,81 @@
+
+:root{--Background: #e4eef1;}
+/* ********************Navbar******************** */
+/* **********Modal********** */
+
+#modal:hover{
+color: #fff !important;
+}
+/* ********************Header******************** */
+#btn2:hover,#btn:hover {
+  text-decoration: underline;
+}
+#withUs:hover, #headerIMG:hover, #sublime-text-svg:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#title:hover{
+  color: #866161;
+}
+#title-h2{
+  font-weight: 600;
+}
+/* ********************Features******************** */
+#Features-Title{
+  background-color:  var(--Background) !important;
+}
+.btn:hover{
+  background-color: rgb(136, 175, 197) !important; 
+  color: white;
+}
+.ich:hover, #ContactSVG:hover{
+  color: rgb(139, 189, 190) !important;
+}
+/* **********Coding PNG********** */
+
+
+#contact-box1{
+  background-color: var(--Background);
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 3.1rem;
+  border-top-left-radius: 0;
+}
+#contact-box2{
+  background-color: var(--Background);
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 3.1rem;
+  border-top-right-radius: 0;
+}
+#contact-box3{
+  background-color: var(--Background);
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 3.1rem;
+  border-bottom-left-radius: 0;
+}
+#contact-box4{
+  background-color: var(--Background);
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 3.1rem;
+  border-bottom-right-radius: 0;
+}
+#ContactSVG{
+  cursor: pointer;
+}
+#phone-number{
+position: absolute;
+left: 350px;
+}
+#Contact-btn{
+  background-color: #99c4d8 !important;
+  font-weight: bolder;
+}
+#Contact-btn:hover{
+  background-color: rgb(123, 204, 204) !important;
+  color: white;
+}
+/* **********Footer********** */
+

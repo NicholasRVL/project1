@@ -14,9 +14,9 @@ class TaskController extends Controller
     {
         // $tasks = Auth::user()->tasks()->latest()->get();
         // $tasks = Task::all();
-
+        $title = 'Tasks';
         $tasks = Task::where('user_id', auth()->id())->latest()->get();
-        return view('user.index', compact('tasks'));
+        return view('user.index', compact('tasks', 'title'));
 
     }
     

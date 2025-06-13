@@ -1,16 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DevUserController extends Controller
+class AdminListuserController extends Controller
 {
     public function index(){
+
         $title = 'List User';
         $users = User::where('level', 'user')->get();
-        return view('developer.userlist', compact('users', 'title' ));
+        return view('admin.listuser', compact('users', 'title'));
     }
 
-    
 }
