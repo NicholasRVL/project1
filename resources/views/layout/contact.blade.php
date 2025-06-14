@@ -19,7 +19,7 @@
         <i class="bi bi-telephone ich" style="font-size: 3em; color:rgb(69, 107, 126);"></i>
         <h4 class="mt-3">Contact Us</h4>
 
-        <div>+62-853-6674-2663</div>
+        <a href="https://wa.me/62-853-6674-2663" style="color: black;">+62-853-6674-2663</a>
       </div>
 
 
@@ -30,6 +30,14 @@
         <h4 class="mt-3">Email Us</h4>
 
         <div>wetasks@gmail.com</div>
+
+      </div>
+
+      <div class="text-center p-4" id="contact-box3">
+       <a href="https://instagram.com/n._rvl"><i class="bi bi-instagram ich" style="font-size: 3em; color:rgb(69, 107, 126);"></i> </a>
+        <h4 class="mt-3">Instagram</h4>
+
+        <div>n._rvl</div>
 
       </div>
 
