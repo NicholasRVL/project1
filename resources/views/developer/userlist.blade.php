@@ -53,6 +53,7 @@
                       <td>{{ $user->email}}</td>
                       <td>{{ $user->level}}</td>
                       <td>{{ $user->created_at }}</td>
+                    
                       <td>{{ $user->updated_at }}</td>
                       <td>
                         <form action="{{ route('user.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Hapus?')">

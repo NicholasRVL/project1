@@ -12,8 +12,6 @@ class TaskController extends Controller
 {
       public function index()
     {
-        // $tasks = Auth::user()->tasks()->latest()->get();
-        // $tasks = Task::all();
         $title = 'Tasks';
         $tasks = Task::where('user_id', auth()->id())->latest()->get();
         return view('user.index', compact('tasks', 'title'));
@@ -24,10 +22,6 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate(['title' => 'required|string|max:255']);
-
-        // Auth::user()->tasks()->create([
-        //     'title' => $request->title
-        // ]);
 
          Task::create([
             'title' => $request->title,

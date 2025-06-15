@@ -26,7 +26,7 @@ class DeveloperController extends Controller
     {
         $user->delete();
     
-        return redirect()->route('user.index')->with('success', 'users deleted successfully');
+        return redirect()->route('user.index')->with('success', 'users deleted');
     }
 
 

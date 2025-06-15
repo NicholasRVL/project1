@@ -42,6 +42,7 @@
                       <th>Delete</th>
                       <th>Tasks</th>
                     </tr>
+
                   </thead>
                   <tbody>
                     @forelse($users as $user) 
@@ -53,6 +54,7 @@
                       <td>{{ $user->level}}</td>
                       <td>{{ $user->created_at }}</td>
                       <td>{{ $user->updated_at }}</td>
+
                       <td>
                         <form action="{{ route('user.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Hapus?')">
                           @csrf
@@ -64,6 +66,7 @@
                        <a href="{{ route('tasks.user', $user->id) }}" class="btn btn-sm btn-info"><i class="bi bi-card-text"></i></i></a>
                       </td>
                       @empty
+
                      <li class="list-group-item text-muted">Empty</li>
                     
                     </tr>
@@ -72,6 +75,7 @@
         
 
                   </tbody>
+                  
                 </table>
               </div>
         </div>

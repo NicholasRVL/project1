@@ -13,9 +13,8 @@ class AuthController extends Controller
     function login(){
         $user = Auth::user();
 
-        //jik user sudah login
         if($user){
-            //cek level
+            
             if($user->level == 'developer'){
                 return redirect()->intended('developer');
             }else if($user->level == 'admin'){
@@ -33,13 +32,12 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8'
         ]);
-        //menyiapkan variabel cridentials
+        
         $credentials = $request->only('email', 'password');
 
-        //cek cridentials ke tabel users meggunakan Auth
+        
         if(Auth::attempt($credentials)){
-            //jika berhasil login
-            //cek level user
+            
             $user = Auth::user();
             if($user->level == 'developer'){
                 return redirect()->intended('developer');
@@ -51,7 +49,7 @@ class AuthController extends Controller
             return redirect()->intended('/');
         }
 
-        //jika login gagal
+        
         return redirect('login')
             ->withErrors([
                 'failed' => 'User tidak ditemukan atau password yang anda masukkan salah'

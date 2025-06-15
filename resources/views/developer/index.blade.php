@@ -37,11 +37,6 @@
             <p class=" mb-0 text-center">Users</p>
             
         </div>
-
-        {{-- <div class="button-item p-2" style="height: max-content">
-            <a href="#" class="shadow-sm rounded-2 icon-link icon-link-hover justify-content-center align-item-center" id="add-notes" style="height: 8vh; width: 17vh; background-color: rgb(178, 201, 221); --bs-icon-link-transform: translate3d(0, -.125rem, 0);"><i class="bi bi-plus-lg mb-3" style="font-size: 2em;"></i></a>
-            <p class=" mb-0 text-center">Label 1</p>
-        </div> --}}
     </div>
 
 
